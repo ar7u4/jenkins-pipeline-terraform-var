@@ -38,7 +38,6 @@ pipeline{
                       sh """
                           
                           terraform init                          
-                        //   terraform plan -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' -var 'region=${params.Region}' --var-file=./config/terraform.tfvars
                           terraform destroy -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' -var 'region=${params.Region}' --var-file=./config/terraform.tfvars --auto-approve 
                          
                       """
@@ -85,5 +84,7 @@ pipeline{
 //             }
 //         } 
 
-//     }
-// }     
+    }
+}     
+
+                        //   terraform plan -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' -var 'region=${params.Region}' --var-file=./config/terraform.tfvars
